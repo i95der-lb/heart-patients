@@ -14,8 +14,10 @@ import {
     Grid,
     AppBar,
     Toolbar,
-    Typography
+    Typography,
+    IconButton
 } from '@material-ui/core'
+import Favorite from '@material-ui/icons/Favorite';
 import Graph from './Graph'
 
 
@@ -24,7 +26,7 @@ const invertDirection = {
     'desc': 'asc'
 }
 
-const styles = {
+const styles = (theme) => ({
     table: {
         minWidth: 650,
     },
@@ -38,7 +40,9 @@ const styles = {
     tableHeaderCell: {
         fontWeight: 'bold',
         backgroundColor: '#e57373',
-        color: 'white'
+        color: 'white',
+        justify: 'center',
+        textAlign: 'center'
     },
     tableRowCell: {
         align: 'right'
@@ -52,9 +56,11 @@ const styles = {
         active: true,
     },
     appbar: {
-        marginBottom: '10px'
-    }
-}
+        marginBottom: '10px',
+        backgroundColor: theme.palette.info.light
+    },
+    space: theme.mixins.toolbar
+})
 
 
 class PatientTable extends Component {
@@ -120,11 +126,15 @@ class PatientTable extends Component {
         if (this.state.data !== []) {
             return (
                 <div>
-                    {/* <AppBar className={classes.appbar}>
+                    <AppBar className={classes.appbar} >
                         <Toolbar>
                         <Typography variant='h6'>HeartPatients</Typography>
+                        <IconButton><Favorite /></IconButton>
                         </Toolbar>
-                    </AppBar> */}
+                    </AppBar>
+                    <div className={classes.space}>
+
+                    </div>
                     <Grid direction='column' alignItems='center' spacing={5} container>
                         <Grid item>
                             <TableContainer component={Paper} className={classes.tableContainer}>
