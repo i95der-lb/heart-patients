@@ -15,6 +15,18 @@ router.get("/events",  async (req, res) => {
     // res.send(JSON.stringify({ allPatients }, null, 4));
 })
 
+router.get("/events/:patientId",  async (req, res) => {
+    let patientsEvents
+    
+    let db = conn.getDB()
+    if(db) {
+        patientsEvents = await Event.find({ patientId: req.params.patientId})
+    }
+    res.header("Content-Type",'application/json');
+    res.send(patientsEvents)
+    // res.send(JSON.stringify({ allPatients }, null, 4));
+})
+
 router.post("/events", async (req, res) => {
     const event = new Event(req.body)
     try {
