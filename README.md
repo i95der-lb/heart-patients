@@ -34,6 +34,6 @@ There are two main components in the client's App:
 - PatientTable.js
 - Graph.js 
 
-axios (https://www.npmjs.com/package/axios) was used to call the server APIs.
-Material-ui (https://www.npmjs.com/package/@material-ui/core) was used to style the App.
+axios (https://www.npmjs.com/package/axios) was used to call the server APIs.<br />
+Material-ui (https://www.npmjs.com/package/@material-ui/core) was used to style the App. <br />
 The graph used highcharts (https://www.npmjs.com/package/highcharts).
