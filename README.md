@@ -12,7 +12,7 @@ The data models of the collections were implemented with mongoose (https://www.n
 
 The connection to the database is in `server/db/conn.js`
 
-## APIs
+## Server & APIs
 Each collection has its own API file in `server/api.js`
 
 Add a config.env file to the server directory, and add in it all the following variables: 
